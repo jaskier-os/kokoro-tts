@@ -1,0 +1,62 @@
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.pytest_cache/
+.coverage
+htmlcov/
+.cache/
+
+# Python package build artifacts
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Virtual environments
+.venv/
+.venv-mps/
+env/
+venv/
+ENV/
+
+# Environment / secrets (never commit a real .env)
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+
+# Model weights and voice packs (downloaded via fetch_models.sh; not committed)
+# These are standard public pretrained assets, see README.
+*.pth
+*.onnx
+*.tar*
+api/src/models/v1_0/*.pth
+api/src/voices/v1_0/*.pt
+Kokoro-82M/
+
+# Runtime output / temp
+output/
+app/
+api/temp_files/
+ui/data/
+
+# Generated audio in examples
+examples/**/output/
+examples/*.wav
+examples/*.pcm
+examples/*.mp3
+examples/*.flac
+examples/*.aac
+examples/*.ogg
+examples/phoneme_examples/output/*.wav
+examples/assorted_checks/benchmarks/output_audio/*
