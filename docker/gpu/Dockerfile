@@ -41,13 +41,10 @@ ENV PATH="/app/.venv/bin:$PATH" \
     ESPEAK_DATA_PATH=/usr/share/espeak-ng-data \
     DEVICE="gpu"
 
-COPY --chown=appuser:appuser scripts/download_voices.py ./download_voices.py
-
 ENV DOWNLOAD_MODEL=true
-# Download model and voices if enabled (standard public assets, not committed)
+# Download model if enabled
 RUN if [ "$DOWNLOAD_MODEL" = "true" ]; then \
-    python download_model.py --output api/src/models/v1_0 && \
-    python download_voices.py --output api/src/voices/v1_0; \
+    python download_model.py --output api/src/models/v1_0; \
     fi
 
 # Run FastAPI server through entrypoint.sh

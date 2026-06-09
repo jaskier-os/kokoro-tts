@@ -78,7 +78,7 @@ def download_model(output_dir: str) -> None:
         if not verify_files(model_path, config_path):
             raise RuntimeError("Failed to verify downloaded files")
 
-        logger.info(f"Model files prepared in {output_dir}")
+        logger.info(f"✓ Model files prepared in {output_dir}")
 
     except Exception as e:
         logger.error(f"Failed to download model: {e}")

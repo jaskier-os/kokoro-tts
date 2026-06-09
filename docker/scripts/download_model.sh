@@ -99,7 +99,7 @@ fi
 
 # Verify downloaded files
 if [ "$success" = true ] && verify_files "$MODEL_PATH" "$CONFIG_PATH"; then
-    echo "Model files prepared in $MODEL_DIR"
+    echo "✓ Model files prepared in $MODEL_DIR"
     exit 0
 else
     echo "Failed to download or verify model files" >&2

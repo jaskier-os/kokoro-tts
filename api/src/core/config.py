@@ -25,11 +25,9 @@ class Settings(BaseSettings):
         False  # Whether to allow saving combined voices locally
     )
 
-    # Model/voice directories, relative to the api/ directory by default.
-    # Override with MODEL_DIR / VOICES_DIR env vars (e.g. absolute paths in a
-    # container). Weights are fetched via fetch_models.sh and are not committed.
-    model_dir: str = "src/models"  # Relative to api/ dir
-    voices_dir: str = "src/voices/v1_0"  # Relative to api/ dir
+    # Container absolute paths
+    model_dir: str = "/app/api/src/models"  # Absolute path in container
+    voices_dir: str = "/app/api/src/voices/v1_0"  # Absolute path in container
 
     # Audio Settings
     sample_rate: int = 24000

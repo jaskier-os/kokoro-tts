@@ -1,30 +1,31 @@
-# Python bytecode / caches
+# Version control
+.git
+
+# Python
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
 *.py[cod]
 *$py.class
 .Python
-.pytest_cache/
+.pytest_cache
 .coverage
-htmlcov/
-.cache/
+.coveragerc
 
 # Python package build artifacts
 *.egg-info/
 *.egg
 dist/
 build/
-
-# Virtual environments
+*.onnx
+*.pth
+# Environment
+# .env
 .venv/
-.venv-mps/
 env/
 venv/
 ENV/
-
-# Environment / secrets (never commit a real .env)
-.env
-.env.*
-!.env.example
 
 # IDE
 .idea/
@@ -32,31 +33,47 @@ ENV/
 *.swp
 *.swo
 
-# OS
-.DS_Store
-
+# Project specific
 # Model weights and voice packs (downloaded via fetch_models.sh; not committed)
-# These are standard public pretrained assets, see README.
 *.pth
-*.onnx
 *.tar*
 api/src/models/v1_0/*.pth
 api/src/voices/v1_0/*.pt
+
+
+# Other project files
+.env
 Kokoro-82M/
-
-# Runtime output / temp
-output/
-app/
-api/temp_files/
 ui/data/
+EXTERNAL_UV_DOCUMENTATION*
+app
+api/temp_files/
 
-# Generated audio in examples
-examples/**/output/
+# Docker
+Dockerfile*
+docker-compose*
+examples/ebook_test/chapter_to_audio.py
+examples/ebook_test/chapters_to_audio.py
+examples/ebook_test/parse_epub.py
+api/src/voices/af_jadzia.pt
+examples/assorted_checks/test_combinations/output/*
+examples/assorted_checks/test_openai/output/*
+
+
+# Audio files
 examples/*.wav
 examples/*.pcm
 examples/*.mp3
 examples/*.flac
-examples/*.aac
+examples/*.acc
 examples/*.ogg
+examples/speech.mp3
 examples/phoneme_examples/output/*.wav
+**/phoneme_examples/output/*.wav
 examples/assorted_checks/benchmarks/output_audio/*
+uv.lock
+# Redundant local lockfile (this project pins via uv.lock)
+requirements.lock.txt
+
+# Mac MPS virtualenv for dual testing
+.venv-mps

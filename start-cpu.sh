@@ -10,14 +10,13 @@ export PYTHONPATH=$PROJECT_ROOT:$PROJECT_ROOT/api
 export MODEL_DIR=src/models
 export VOICES_DIR=src/voices/v1_0
 export WEB_PLAYER_PATH=$PROJECT_ROOT/web
-# Set the espeak-ng data path (override via env if your distro differs)
-export ESPEAK_DATA_PATH=${ESPEAK_DATA_PATH:-/usr/lib/x86_64-linux-gnu/espeak-ng-data}
+# Set the espeak-ng data path to your location
+export ESPEAK_DATA_PATH=/usr/lib/x86_64-linux-gnu/espeak-ng-data
 
 # Run FastAPI with CPU extras using uv run
 # Note: espeak may still require manual installation,
 uv pip install -e ".[cpu]"
 uv run --no-sync python docker/scripts/download_model.py --output api/src/models/v1_0
-uv run --no-sync python scripts/download_voices.py --output api/src/voices/v1_0
 
 # Apply the misaki patch to fix possible EspeakWrapper issue in older versions
 # echo "Applying misaki patch..."
