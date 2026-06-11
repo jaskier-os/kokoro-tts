@@ -3,6 +3,9 @@
 </p>
 
 # <sub><sub>_`FastKoko`_ </sub></sub>
+
+> **Docs & wiki:** [github.com/jaskier-os/docs/wiki](https://github.com/jaskier-os/docs/wiki)
+
 [![Tests](https://img.shields.io/badge/tests-69-darkgreen)]()
 [![Coverage](https://img.shields.io/badge/coverage-54%25-tan)]()
 [![Try on Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Try%20on-Spaces-blue)](https://huggingface.co/spaces/Remsky/Kokoro-TTS-Zero)
